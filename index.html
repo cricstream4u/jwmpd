@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="Cric stream Favicon.jpg" />
+    <title>TG-@cric_stream</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://xyzts.pages.dev/style.css" />
+    <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+    <style>
+      body {
+        margin: 0px;
+        padding-top: 5px;
+        font-family: Arial, sans-serif;
+        width: 100%;
+      }
+
+      #jwplayerDiv {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      .sticky-footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #fff;
+        color: white;
+        text-align: center;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="jwplayerDiv"></div>
+
+    <script type="text/javascript">
+      function getParams() {
+        const url = new URL(window.location.href);
+        const [mpdUrlPart, drmPart] = url.search.slice(1).split('|');
+        const mpdUrl = decodeURIComponent(mpdUrlPart);
+        const searchParams = new URLSearchParams(drmPart);
+
+        const drmScheme = searchParams.get("drmScheme");
+        const drmLicense = searchParams.get("drmLicense"); // Format: keyId:key
+
+        let keyId = "", key = "";
+        if (drmLicense) {
+          [keyId, key] = drmLicense.split(':');
+        }
+
+        return {
+          file: mpdUrl,
+          drm: {
+            scheme: drmScheme,
+            keyId,
+            key,
+          },
+        };
+      }
+
+      const { file, drm } = getParams();
+
+      jwplayer("jwplayerDiv").setup({
+        file: file,
+        type: "dash",
+        drm: {
+          [drm.scheme]: {
+            keyId: drm.keyId,
+            key: drm.key,
+          },
+        },
+        autostart: true,
+        mute: false,
+        image: "WhatsApp Image 2025-02-22 at 5.19.53 PM.jpeg"
+      });
+    </script>
+
+    <center>
+      <script type="text/javascript" src="//widget.supercounters.com/ssl/online_t.js"></script>
+      <script type="text/javascript">sc_online_t(1707487,"Users Online","170ddb");</script>
+      <noscript><a href="https://www.supercounters.com/">supercounters.com</a></noscript>
+    </center>
+
+    <div style="background-color: #0074d9; text-align: center; padding: 10px;">
+      <a href="https://t.me/cric_stream" target="_blank">
+        <button id="joinTelegramButton">Join Telegram</button>
+      </a>
+    </div>
+
+    <script async data-cfasync="false" src="//carryglanced.com/2346ffc02acfb9eb4451708a5df9f609/invoke.js"></script>
+    <div id="container-2346ffc02acfb9eb4451708a5df9f609"></div>
+
+    <div class="sticky-footer">
+      <script type="text/javascript">
+        atOptions = {
+          'key' : 'd57705b1f5d0f7abbb19cdb5dfe61249',
+          'format' : 'iframe',
+          'height' : 90,
+          'width' : 728,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="//carryglanced.com/d57705b1f5d0f7abbb19cdb5dfe61249/invoke.js"></script>
+    </div>
+  </body>
+</html>

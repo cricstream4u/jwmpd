@@ -38,7 +38,6 @@
    
 
 
-<script type="text/javascript">
       function getParams() {
         const url = new URL(window.location.href);
         const [mpdUrlPart, drmPart] = url.search.slice(1).split('|');
@@ -78,5 +77,5 @@
         mute: false,
         image: "WhatsApp Image 2025-02-22 at 5.19.53 PM.jpeg"
       });
-    </script>
+   
 

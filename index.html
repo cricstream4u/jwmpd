@@ -1,91 +1,67 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Streaming by Asif Ansari</title>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
-   <script src="https://cdn.tailwindcss.com"></script> 
-  <style>
-    body {
-      all: unset;
-      font-family: Arial, sans-serif;
-      width: 100wh;
-      height: 100vh;
-      
-    }
-
-    .no-tailwind {
-    all: unset;
-    }
-
-   #jwplayerDiv{
-    width:100%;
-    height:100%;
-    margin-top:5px;
-    
-   }
-
-   #joinTelegramButton{
-       background-color:white;
-       padding-left: 10px;
-       padding-right: 10px;
-   }
-
-    @keyframes marquee{ 
-
-        from { transform: translateX(0%); }
-
-        to { transform: translateX(-100%); }
-
-    }
-
-    
-  </style>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jwplayer.com/libraries/IDzF9Zmk.js"></script>
   <script src="script.js" defer></script>
+
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .animate-marquee {
+      animation: marquee 50s linear infinite;
+    }
+  </style>
 </head>
-<body oncontextmenu="return false" >
-  <!-- Header -->
-    <header class="p-4 bg-blue-900 text-white text-center text-2xl font-bold">
-       <a href="https://cinearena.live/"> <img src="cineheader.png" class="h-10 md:h-10 lg:h-10 mx-auto"></a>
-    </header>
 
- <!-- Marquee-->
-  <div style="display: flex; align-items: center; gap: 0px; width: 100%; background-color: #006400;">
+<body class="bg-white font-sans" oncontextmenu="return false">
 
-<!-- Fixed H4 -->
+  <!-- 🔵 Header -->
+  <header class="p-4 bg-blue-900 text-white text-center">
+    <a href="https://cinearena.live/">
+      <img src="cineheader.png" class="h-10 mx-auto" alt="Cine Arena" />
+    </a>
+  </header>
 
-<h4 style="flex-shrink: 0; margin: 0; font-size: 20px; color: #fff; background-color: #006400;">UPDATES:</h4>
+  <!-- 🟢 Scrolling Marquee -->
+  <div class="flex items-center w-full bg-green-800">
+    <h4 class="shrink-0 m-0 text-white px-3 text-base md:text-lg">UPDATES:</h4>
+    <div class="overflow-hidden whitespace-nowrap flex-grow">
+      <p class="inline-block text-sm md:text-base text-white bg-red-600 px-4 py-2 animate-marquee">
+        Wait for 20-30 seconds after that video start playing smoothly. For more details join our Telegram channel.
+        20-30 सेकंड तक प्रतीक्षा करें, उसके बाद वीडियो सुचारू रूप से चलना शुरू हो जाएगा, अधिक जानकारी के लिए हमारे टेलीग्राम चैनल से जुड़ें।
+        ২০-৩০ সেকেন্ড অপেক্ষা করুন, তারপর ভিডিওটি মসৃণভাবে চলতে শুরু করবে। আরও বিস্তারিত জানতে আমাদের টেলিগ্রাম চ্যানেলে যোগ দিন।
+      </p>
+    </div>
+  </div>
 
-<!-- Scrolling P (Marquee) -->
+  <!-- 🟣 Responsive Video Container -->
+  <div class="w-full px-2 md:max-w-4xl md:mx-auto mt-4">
+    <div id="jwplayerDiv" class="w-full aspect-video bg-black rounded-md overflow-hidden"></div>
+  </div>
 
-<div style="overflow: hidden; white-space: nowrap; flex-grow: 1; box-sizing: border-box;">
-
-<p style="display: inline-block; margin: 0; font-size: 18px; color: white; background-color: #dc143c; animation: marquee 50s linear infinite;">Wait for 20-30 seconds after that video start playing smoothly for more detail join our telegram channel. 
-20-30 सेकंड तक प्रतीक्षा करें, उसके बाद वीडियो सुचारू रूप से चलना शुरू हो जाएगा, अधिक जानकारी के लिए हमारे टेलीग्राम चैनल से जुड़ें। ২০-৩০ সেকেন্ড অপেক্ষা করুন, তারপর ভিডিওটি মসৃণভাবে চলতে শুরু করবে। আরও বিস্তারিত জানতে আমাদের টেলিগ্রাম চ্যানেলে যোগদান করুন।</p>
-
-</div>
-
-</div>
-
-
- 
-  <!--Player-->
-  <div id="jwplayerDiv"></div>
-
-  <center>
+  <!-- 🔻 Online Counter -->
+  <center class="mt-2">
     <script src="//widget.supercounters.com/ssl/online_t.js"></script>
     <script>sc_online_t(1707487,"Users Online","170ddb");</script>
     <noscript><a href="https://www.supercounters.com/">supercounters.com</a></noscript>
   </center>
 
-  <div style="background-color: #0074d9; width:100%; text-align: center; padding: 10px;">
+  <!-- 🔷 Telegram Button -->
+  <div class="bg-blue-600 text-center py-4 mt-2">
     <a href="https://t.me/cric_stream" target="_blank">
-      <button id="joinTelegramButton">Join Telegram</button>
+      <button class="bg-white text-blue-700 px-6 py-2 rounded font-semibold shadow hover:bg-gray-200 transition">
+        Join Telegram
+      </button>
     </a>
   </div>
 
- 
 </body>
 </html>
